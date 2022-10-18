@@ -17,7 +17,7 @@ class CreateCitiesTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('lat',6,4);
-            $table->decimal('lot',6,4);
+            $table->decimal('lon',6,4);
         });
     }
 

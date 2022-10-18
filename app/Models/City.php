@@ -18,7 +18,7 @@ class City extends Model
     protected $fillable = [
         'name',
         'lat',
-        'lot',
+        'lon',
     ];
     /**
      * Indicates if the model should be timestamped.

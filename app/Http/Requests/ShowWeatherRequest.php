@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\City;
 
 class ShowWeatherRequest extends FormRequest
 {
@@ -24,9 +25,9 @@ class ShowWeatherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required_without:lat','required_without:lot', 'string', 'min:2', 'max:255'],
+            'name' => ['exists:cities,name','required_without:lat','required_without:lon', 'string', 'min:2', 'max:255'],
             'lat'=>['required_without:name','numeric','between:0,99.9999'],
-            'lot'=>['required_without:name','numeric','between:0,99.9999'],
+            'lon'=>['required_without:name','numeric','between:0,99.9999'],
         ];
     }
 }

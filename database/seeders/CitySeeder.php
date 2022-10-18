@@ -26,7 +26,7 @@ class CitySeeder extends Seeder
             City::create([
                 "name" => $value->city,
                 "lat" => $value->lat,
-                "lot" => $value->lng,
+                "lon" => $value->lng,
 
             ]);
 
