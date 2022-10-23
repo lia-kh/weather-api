@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Temperature extends Model
+class Information extends Model
 {
     use HasFactory;
 
@@ -16,9 +16,16 @@ class Temperature extends Model
      */
     protected $fillable = [
         'date',
-        'temperature',
-        'city_id'
+        'temp',
+        'city_id',
     ];
+    /**
+     * @var array
+     */
+    protected $casts = [
+        'temp'=>'json'
+    ];
+    protected $table = 'informations';
 
     /**
      * Get the city

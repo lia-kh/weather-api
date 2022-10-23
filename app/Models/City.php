@@ -28,12 +28,12 @@ class City extends Model
     public $timestamps = false;
 
     /**
-     * Get the temperatures for the city.
+     * Get the informations for the city.
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function temperatures():HasMany
+    public function informations():HasMany
     {
-        return $this->hasMany(Temperature::class);
+        return $this->hasMany(Information::class);
     }
 
     /**
